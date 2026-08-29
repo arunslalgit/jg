@@ -151,6 +151,20 @@ img { max-width: 100%; display: block; }
   transition: filter .15s;
 }
 .order:hover { filter: brightness(1.08); }
+.card.is-sold .card-img img { filter: grayscale(.55) brightness(.96); }
+.card.is-sold .card-img { cursor: zoom-in; }
+.sold-badge {
+  position: absolute; top: 12px; left: -34px;
+  transform: rotate(-35deg);
+  background: var(--maroon); color: #fff;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 38px; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  pointer-events: none;
+}
+.card-img { position: relative; }
+.order.sold, .btn-wa.sold {
+  background: #cfc6b6; color: #6d6355 !important; cursor: default; pointer-events: none;
+}
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 16px; }
 
 /* about */

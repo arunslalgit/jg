@@ -15,6 +15,7 @@ const PRODUCTS = [
  },
  {
   "id": "elysian-bleu-earrings",
+  "sold": true,
   "name": "Elysian Bleu Earrings",
   "price": 18,
   "unit": null,
@@ -218,6 +219,7 @@ const PRODUCTS = [
  },
  {
   "id": "tiger-eye-pearl-garland-choker",
+  "sold": true,
   "name": "Tiger Eye–Pearl Garland Choker",
   "price": 20,
   "unit": null,
@@ -344,6 +346,7 @@ const PRODUCTS = [
  },
  {
   "id": "celeste-cornets-earring",
+  "sold": true,
   "name": "Celeste Cornets Earring",
   "price": 15,
   "unit": null,
@@ -827,6 +830,7 @@ const PRODUCTS = [
  },
  {
   "id": "empress-fringe-cascade-necklace",
+  "sold": true,
   "name": "Empress Fringe Cascade Necklace",
   "price": 20,
   "unit": null,

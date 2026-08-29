@@ -25,21 +25,25 @@ function render() {
     (!q || p.name.toLowerCase().includes(q))
   );
   const sort = sortEl.value;
+  if (sort === 'featured') items = [...items].sort((a, b) => (a.sold ? 1 : 0) - (b.sold ? 1 : 0));
   if (sort === 'price-asc') items = [...items].sort((a, b) => a.price - b.price);
   else if (sort === 'price-desc') items = [...items].sort((a, b) => b.price - a.price);
   else if (sort === 'name') items = [...items].sort((a, b) => a.name.localeCompare(b.name));
 
   grid.innerHTML = items.map(p => `
-    <article class="card">
+    <article class="card${p.sold ? ' is-sold' : ''}">
       <div class="card-img" data-id="${p.id}">
         <img src="images/${p.id}.webp" alt="${p.name}" loading="lazy">
+        ${p.sold ? '<span class="sold-badge">Sold out</span>' : ''}
       </div>
       <div class="card-body">
         <span class="card-cat">${p.cat}</span>
         <h3>${p.name}</h3>
         <div class="card-row">
           <p class="price">${priceHtml(p)}</p>
-          <a class="order" href="${waLink(p.name)}" target="_blank" rel="noopener">Order</a>
+          ${p.sold
+            ? '<span class="order sold">Sold out</span>'
+            : `<a class="order" href="${waLink(p.name)}" target="_blank" rel="noopener">Order</a>`}
         </div>
       </div>
     </article>`).join('');
@@ -81,7 +85,15 @@ grid.addEventListener('click', e => {
   mImg.alt = p.name;
   mName.textContent = p.name;
   mPrice.innerHTML = priceHtml(p);
-  mOrder.href = waLink(p.name);
+  if (p.sold) {
+    mOrder.textContent = 'Sold out';
+    mOrder.classList.add('sold');
+    mOrder.removeAttribute('href');
+  } else {
+    mOrder.textContent = 'Order via WhatsApp';
+    mOrder.classList.remove('sold');
+    mOrder.href = waLink(p.name);
+  }
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
 });
