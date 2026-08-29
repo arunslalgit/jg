@@ -176,9 +176,39 @@ img { max-width: 100%; display: block; }
 }
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 16px; }
 
+/* how ordering works */
+.how {
+  background: var(--teal); color: #d9e4e2;
+  padding: clamp(50px, 8vw, 90px) clamp(16px, 4vw, 48px);
+}
+.how-inner {
+  max-width: 980px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(30px, 6vw, 80px); flex-wrap: wrap;
+}
+.how-video video {
+  width: clamp(220px, 26vw, 300px); height: auto; display: block;
+  border-radius: 26px;
+  border: 1px solid rgba(217, 148, 20, .5);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .5);
+}
+.how-steps { max-width: 420px; }
+.how-kicker {
+  font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 10px;
+}
+.how-steps h2 {
+  font-size: clamp(28px, 4vw, 40px); font-weight: 500;
+  margin: 0 0 18px; color: #fff;
+}
+.how-steps ol { margin: 0 0 26px; padding: 0 0 0 20px; }
+.how-steps li { margin-bottom: 14px; font-size: 16px; line-height: 1.6; }
+.how-steps li::marker { color: var(--gold); font-weight: 500; }
+.how-steps strong { color: var(--turquoise); font-weight: 500; }
+
 /* about */
 .about {
-  background: var(--teal); color: #d9e4e2;
+  background: var(--teal-mid); color: #d9e4e2;
   padding: clamp(50px, 8vw, 90px) 20px;
   text-align: center;
 }
