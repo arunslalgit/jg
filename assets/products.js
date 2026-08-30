@@ -46,6 +46,7 @@ const PRODUCTS = [
  {
   "num": "006",
   "id": "regal-terra-dangle-earrings",
+  "photos": 4,
   "name": "Regal Terra Dangle Earrings",
   "price": 18,
   "unit": null,

@@ -310,11 +310,13 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 24px 60px rgba(0,0,0,.35);
 }
 .modal-card img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.card-img img.alt:not([src]) { visibility: hidden; }
 .card-img img.alt {
   position: absolute; inset: 0;
   opacity: 0; transition: opacity .3s;
 }
-.card:hover .card-img img.alt { opacity: 1; }
+.card:hover .card-img img.alt:not([src]) { visibility: hidden; }
+.card-img img.alt { opacity: 1; }
 .modal-thumbs {
   display: flex; gap: 8px; justify-content: center;
   padding: 12px 12px 0;

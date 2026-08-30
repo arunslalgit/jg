@@ -38,7 +38,7 @@ function render() {
     <article class="card${p.sold ? ' is-sold' : ''}">
       <div class="card-img" data-id="${p.id}">
         <img src="images/${p.id}.webp" alt="${p.name}" loading="lazy">
-        ${p.photos > 1 ? `<img class="alt" src="images/${p.id}-2.webp" alt="" loading="lazy">` : ''}
+        ${p.photos > 1 ? `<img class="alt" data-src="images/${p.id}-2.webp" alt="">` : ''}
         ${p.sold ? '<span class="sold-badge">Sold out</span>' : ''}
       </div>
       <div class="card-body">
@@ -106,6 +106,14 @@ const mImg = document.getElementById('modal-img');
 const mName = document.getElementById('modal-name');
 const mPrice = document.getElementById('modal-price');
 const mOrder = document.getElementById('modal-order');
+
+grid.addEventListener('mouseover', e => {
+  const alt = e.target.closest('.card')?.querySelector('img.alt[data-src]');
+  if (alt) {
+    alt.src = alt.dataset.src;
+    alt.removeAttribute('data-src');
+  }
+});
 
 grid.addEventListener('click', e => {
   const imgWrap = e.target.closest('.card-img');
