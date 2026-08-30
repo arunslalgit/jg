@@ -12,8 +12,9 @@ let activeCat = 'All';
 const PAGE = 24;
 let limit = PAGE;
 
-function waLink(name) {
-  return `https://wa.me/${WA}?text=${encodeURIComponent('Hi Jewelghar, I want to order ' + name)}`;
+function waLink(p) {
+  const price = `€${p.price}${p.unit ? ' ' + p.unit : ''}`;
+  return `https://wa.me/${WA}?text=${encodeURIComponent(`Hi Jewelghar, I want to order #${p.num} ${p.name} (${price})`)}`;
 }
 
 function priceHtml(p) {
@@ -47,7 +48,7 @@ function render() {
           <p class="price">${priceHtml(p)}</p>
           ${p.sold
             ? '<span class="order sold">Sold out</span>'
-            : `<a class="order" href="${waLink(p.name)}" target="_blank" rel="noopener">Order</a>`}
+            : `<a class="order" href="${waLink(p)}" target="_blank" rel="noopener">Order</a>`}
         </div>
       </div>
     </article>`).join('');
@@ -115,6 +116,8 @@ grid.addEventListener('click', e => {
 });
 
 function openProduct(p) {
+  history.replaceState(null, '', '#p=' + p.id);
+  document.getElementById('modal-num').textContent = '#' + p.num;
   mImg.src = `images/${p.id}.webp`;
   mImg.alt = p.name;
   const thumbs = document.getElementById('modal-thumbs');
@@ -143,7 +146,7 @@ function openProduct(p) {
   } else {
     mOrder.textContent = 'Order via WhatsApp';
     mOrder.classList.remove('sold');
-    mOrder.href = waLink(p.name);
+    mOrder.href = waLink(p);
   }
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -153,18 +156,44 @@ document.getElementById('ed-cta').addEventListener('click', () => {
   const p = PRODUCTS.find(x => x.id === 'emerald-comet-earrings');
   if (p) openProduct(p);
 });
+function closeModal() {
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  history.replaceState(null, '', location.pathname + location.search);
+}
 modal.addEventListener('click', e => {
-  if (e.target.hasAttribute('data-close')) {
-    modal.hidden = true;
-    document.body.style.overflow = '';
-  }
+  if (e.target.hasAttribute('data-close')) closeModal();
 });
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !modal.hidden) {
-    modal.hidden = true;
-    document.body.style.overflow = '';
+  if (e.key === 'Escape' && !modal.hidden) closeModal();
+});
+
+/* share */
+document.getElementById('modal-share').addEventListener('click', async e => {
+  const btn = e.currentTarget;
+  const id = location.hash.replace('#p=', '');
+  const p = PRODUCTS.find(x => x.id === id);
+  const url = `https://www.jewelghar.com/p/${id}.html`;
+  const data = { title: p ? `${p.name} — Jewel Ghar Amsterdam` : 'Jewel Ghar Amsterdam', url };
+  if (navigator.share) {
+    try { await navigator.share(data); } catch {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(url);
+      const t = btn.textContent;
+      btn.textContent = 'Link copied!';
+      setTimeout(() => { btn.textContent = t; }, 1600);
+    } catch {}
   }
 });
+
+/* deep link: /#p=<id> opens the piece */
+(function () {
+  const m = location.hash.match(/^#p=([a-z0-9-]+)$/);
+  if (!m) return;
+  const p = PRODUCTS.find(x => x.id === m[1]);
+  if (p) openProduct(p);
+})();
 
 document.getElementById('year').textContent = new Date().getFullYear();
 renderChips();

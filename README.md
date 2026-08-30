@@ -26,7 +26,23 @@ To use the custom domain: add `jewelghar.com` in the same Pages settings screen
 
 ## Updating products
 
-Edit `assets/products.js` — each entry is `{id, name, price, unit, cat}` and the
-photo lives at `images/<id>.webp`. To add a product, drop in a photo and add an
-entry; categories are: Earrings, Necklaces & Sets, Bangles & Bracelets,
-Anklets, Rings, Head Jewelry.
+Edit `assets/products.js` — each entry is `{num, id, name, price, unit, cat}`
+plus optional `photos` (gallery count; files `images/<id>-2.webp`…) and
+`sold: true`. The photo lives at `images/<id>.webp`. Categories: Earrings,
+Necklaces & Sets, Bangles & Bracelets, Anklets, Rings, Head Jewelry.
+
+`num` is the permanent catalog number (goes into WhatsApp order messages,
+e.g. "#076 Handcuff Bracelet (€15)"). Never renumber existing pieces — give
+a new product the next free number.
+
+After any product change, regenerate the per-product pages and sitemap:
+
+```bash
+python3 tools/gen_pages.py
+```
+
+That rebuilds `p/<id>.html` (shareable link per piece, with OG preview and
+schema.org Product markup), `sitemap.xml`, and `robots.txt`. Each piece is
+linkable two ways: `https://www.jewelghar.com/p/<id>.html` (best for sharing —
+proper preview image) and `https://www.jewelghar.com/#p=<id>` (opens the
+piece directly on the main page).

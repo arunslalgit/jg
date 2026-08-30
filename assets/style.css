@@ -280,6 +280,13 @@ img { max-width: 100%; display: block; }
 .site-footer { text-align: center; padding: clamp(46px, 7vw, 80px) 20px 34px; }
 .site-footer h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 500; margin: 0 0 22px; }
 .contact-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center; }
+.btn-ig {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(45deg, #b5307a, #d33a6e, #e08a3c);
+  color: #fff; padding: 12px 26px; border-radius: 100px; font-size: 15px;
+  transition: filter .15s;
+}
+.btn-ig:hover { filter: brightness(1.08); }
 .mail { font-size: 16px; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
 .mail:hover { color: var(--gold-dark); }
 .fine { color: var(--muted); font-size: 13px; margin-top: 40px; }
@@ -312,6 +319,16 @@ img { max-width: 100%; display: block; }
 .modal-info { padding: 18px 22px 24px; text-align: center; }
 .modal-info h3 { font-size: 24px; font-weight: 600; margin: 0 0 6px; }
 .modal-info .price { font-size: 19px; margin-bottom: 16px; }
+.modal-num {
+  font-size: 12px; letter-spacing: 2px; color: var(--muted); margin: 0 0 2px;
+}
+.modal-actions { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.share-btn {
+  background: none; border: 1px solid var(--line); color: var(--ink);
+  padding: 11px 22px; border-radius: 100px; cursor: pointer;
+  font-family: inherit; font-size: 14px;
+}
+.share-btn:hover { border-color: var(--gold); }
 .modal-close {
   position: absolute; top: 10px; right: 10px; z-index: 2;
   width: 36px; height: 36px; border-radius: 50%; border: none; cursor: pointer;
