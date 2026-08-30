@@ -879,7 +879,8 @@ const PRODUCTS = [
   "name": "Royal Meenakari Mayura Earrings",
   "price": 20,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 2
  },
  {
   "num": "108",
