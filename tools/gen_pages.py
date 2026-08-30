@@ -46,6 +46,7 @@ TEMPLATE = """<!DOCTYPE html>
   .pp .back {{ display: inline-block; margin-top: 26px; font-size: 14px; letter-spacing: 1px;
                text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }}
   .pp .ship-note {{ font-size: 13px; color: var(--muted); margin: -10px 0 20px; }}
+  .pp .ship-note a {{ color: var(--gold-dark); border-bottom: 1px solid var(--gold); }}
   .pp .sold-note {{ display: inline-block; background: #cfc6b6; color: #6d6355;
                     padding: 12px 26px; border-radius: 100px; font-size: 15px; }}
 </style>
@@ -63,7 +64,8 @@ TEMPLATE = """<!DOCTYPE html>
   <p class="modal-num">#{num} · {cat}</p>
   <h1>{name}</h1>
   <p class="price">{price_html}</p>
-  <p class="ship-note">Fast shipping · €4.95 (NL) · Free on orders over €50</p>
+  <p class="ship-note">Fast shipping · €4.95 (NL) · Free on orders over €50<br>
+  Outside NL? <a href="https://wa.me/{wa}?text={shipmsg}" target="_blank" rel="noopener">Ask us for a shipping quote</a></p>
   {cta}
   <br><a class="back" href="/#p={id}">Browse the full collection</a>
 </main>
@@ -81,6 +83,7 @@ for p in prods:
     url = f"{SITE}/p/{p['id']}.html"
     img = f"{SITE}/images/{p['id']}.webp"
     msg = urllib.parse.quote(f"Hi Jewelghar, I want to order #{p['num']} {p['name']} ({price_txt})")
+    shipmsg = urllib.parse.quote(f"Hi Jewelghar, what would shipping to my country cost for #{p['num']} {p['name']}?")
     if p.get('sold'):
         cta = '<span class="sold-note">Sold out</span>'
     else:
@@ -109,7 +112,7 @@ for p in prods:
     page = TEMPLATE.format(
         name=html.escape(p['name']), desc=html.escape(desc), url=url, img=img,
         id=p['id'], num=p['num'], cat=html.escape(p['cat']),
-        price_html=html.escape(price_txt), cta=cta, schema=schema, wa=WA, ig=INSTAGRAM,
+        price_html=html.escape(price_txt), cta=cta, schema=schema, wa=WA, ig=INSTAGRAM, shipmsg=shipmsg,
     )
     open(f"p/{p['id']}.html", 'w', encoding='utf-8').write(page)
     urls.append(url)
