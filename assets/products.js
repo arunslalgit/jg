@@ -209,7 +209,8 @@ const PRODUCTS = [
   "name": "Lakshmi Kasu Kemp Necklace",
   "price": 20,
   "unit": null,
-  "cat": "Necklaces & Sets"
+  "cat": "Necklaces & Sets",
+  "photos": 4
  },
  {
   "num": "025",
