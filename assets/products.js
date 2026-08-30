@@ -191,7 +191,8 @@ const PRODUCTS = [
   "name": "Peacock Blossom Temple Necklace",
   "price": 20,
   "unit": null,
-  "cat": "Necklaces & Sets"
+  "cat": "Necklaces & Sets",
+  "photos": 5
  },
  {
   "num": "023",
