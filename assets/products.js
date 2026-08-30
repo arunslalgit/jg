@@ -122,7 +122,8 @@ const PRODUCTS = [
   "name": "Lumen Lark Earrings",
   "price": 12,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 4
  },
  {
   "num": "015",
