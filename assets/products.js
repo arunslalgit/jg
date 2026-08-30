@@ -25,6 +25,7 @@ const PRODUCTS = [
  },
  {
   "id": "blush-scorpion-earrings",
+  "photos": 3,
   "name": "Blush Scorpion Earrings",
   "price": 15,
   "unit": null,
