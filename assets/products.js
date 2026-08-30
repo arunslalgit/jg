@@ -182,7 +182,8 @@ const PRODUCTS = [
   "name": "Lakshmi Divine Heritage Necklace Set",
   "price": 20,
   "unit": null,
-  "cat": "Necklaces & Sets"
+  "cat": "Necklaces & Sets",
+  "photos": 5
  },
  {
   "num": "022",
