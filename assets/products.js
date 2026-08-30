@@ -84,7 +84,8 @@ const PRODUCTS = [
   "name": "Sea Mist Crescent Earrings",
   "price": 15,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 4
  },
  {
   "num": "011",
