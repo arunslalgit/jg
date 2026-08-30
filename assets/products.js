@@ -200,7 +200,8 @@ const PRODUCTS = [
   "name": "Silver Pearl Choker",
   "price": 20,
   "unit": null,
-  "cat": "Necklaces & Sets"
+  "cat": "Necklaces & Sets",
+  "photos": 4
  },
  {
   "num": "024",
