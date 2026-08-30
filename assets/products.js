@@ -747,6 +747,7 @@ const PRODUCTS = [
  },
  {
   "id": "royal-meenakari-mayura-earrings",
+  "photos": 3,
   "name": "Royal Meenakari Mayura Earrings",
   "price": 20,
   "unit": null,
