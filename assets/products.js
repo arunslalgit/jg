@@ -782,11 +782,11 @@ const PRODUCTS = [
   "cat": "Earrings"
  },
  {
-  "id": "emerald-comet-necklace",
-  "name": "Emerald Comet Necklace",
+  "id": "emerald-comet-earrings",
+  "name": "Emerald Comet Earrings",
   "price": 12,
   "unit": null,
-  "cat": "Necklaces & Sets"
+  "cat": "Earrings"
  },
  {
   "id": "lakshmi-haar-ad-necklace-set",
