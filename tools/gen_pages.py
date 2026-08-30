@@ -45,6 +45,7 @@ TEMPLATE = """<!DOCTYPE html>
   .pp .price {{ font-size: 20px; margin-bottom: 20px; }}
   .pp .back {{ display: inline-block; margin-top: 26px; font-size: 14px; letter-spacing: 1px;
                text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }}
+  .pp .ship-note {{ font-size: 13px; color: var(--muted); margin: -10px 0 20px; }}
   .pp .sold-note {{ display: inline-block; background: #cfc6b6; color: #6d6355;
                     padding: 12px 26px; border-radius: 100px; font-size: 15px; }}
 </style>
@@ -62,6 +63,7 @@ TEMPLATE = """<!DOCTYPE html>
   <p class="modal-num">#{num} · {cat}</p>
   <h1>{name}</h1>
   <p class="price">{price_html}</p>
+  <p class="ship-note">Fast shipping · Free shipping on orders over €50</p>
   {cta}
   <br><a class="back" href="/#p={id}">Browse the full collection</a>
 </main>
