@@ -234,6 +234,21 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 24px 60px rgba(0,0,0,.35);
 }
 .modal-card img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.card-img img.alt {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .3s;
+}
+.card:hover .card-img img.alt { opacity: 1; }
+.modal-thumbs {
+  display: flex; gap: 8px; justify-content: center;
+  padding: 12px 12px 0;
+}
+.modal-thumbs img {
+  width: 58px; height: 58px; object-fit: cover;
+  border-radius: 8px; cursor: pointer;
+  border: 2px solid transparent; opacity: .75;
+}
+.modal-thumbs img.active { border-color: var(--gold); opacity: 1; }
 .modal-info { padding: 18px 22px 24px; text-align: center; }
 .modal-info h3 { font-size: 24px; font-weight: 600; margin: 0 0 6px; }
 .modal-info .price { font-size: 19px; margin-bottom: 16px; }

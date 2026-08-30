@@ -34,6 +34,7 @@ function render() {
     <article class="card${p.sold ? ' is-sold' : ''}">
       <div class="card-img" data-id="${p.id}">
         <img src="images/${p.id}.webp" alt="${p.name}" loading="lazy">
+        ${p.photos > 1 ? `<img class="alt" src="images/${p.id}-2.webp" alt="" loading="lazy">` : ''}
         ${p.sold ? '<span class="sold-badge">Sold out</span>' : ''}
       </div>
       <div class="card-body">
@@ -83,6 +84,23 @@ grid.addEventListener('click', e => {
   if (!p) return;
   mImg.src = `images/${p.id}.webp`;
   mImg.alt = p.name;
+  const thumbs = document.getElementById('modal-thumbs');
+  if (p.photos > 1) {
+    const srcs = [`images/${p.id}.webp`];
+    for (let i = 2; i <= p.photos; i++) srcs.push(`images/${p.id}-${i}.webp`);
+    thumbs.innerHTML = srcs.map((s, i) =>
+      `<img src="${s}" class="${i === 0 ? 'active' : ''}" alt="${p.name} photo ${i + 1}">`).join('');
+    thumbs.hidden = false;
+    thumbs.onclick = e => {
+      const t = e.target.closest('img');
+      if (!t) return;
+      mImg.src = t.src;
+      thumbs.querySelectorAll('img').forEach(x => x.classList.toggle('active', x === t));
+    };
+  } else {
+    thumbs.hidden = true;
+    thumbs.innerHTML = '';
+  }
   mName.textContent = p.name;
   mPrice.innerHTML = priceHtml(p);
   if (p.sold) {

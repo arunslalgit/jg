@@ -177,6 +177,7 @@ const PRODUCTS = [
  },
  {
   "id": "peacock-arch-kundan-set",
+  "photos": 2,
   "name": "Peacock Arch Kundan Set",
   "price": 18,
   "unit": null,
