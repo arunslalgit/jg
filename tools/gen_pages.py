@@ -74,6 +74,7 @@ TEMPLATE = """<!DOCTYPE html>
 </footer>
 <script data-goatcounter="https://jewelghar.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+<script src="/assets/track.js"></script>
 </body>
 </html>
 """
@@ -89,7 +90,9 @@ for p in prods:
     if p.get('sold'):
         cta = '<span class="sold-note">Sold out</span>'
     else:
-        cta = f'<a class="btn-wa big" href="https://wa.me/{WA}?text={msg}" target="_blank" rel="noopener">Order via WhatsApp</a>'
+        cta = (f'<a class="btn-wa big" href="https://wa.me/{WA}?text={msg}" target="_blank" rel="noopener"'
+               f' data-track="order/{p["id"]}" data-track-title="Order #{p["num"]} {html.escape(p["name"])}">'
+               f'Order via WhatsApp</a>')
     schema = json.dumps({
         "@context": "https://schema.org",
         "@type": "Product",

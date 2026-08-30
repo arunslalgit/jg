@@ -48,7 +48,8 @@ function render() {
           <p class="price">${priceHtml(p)}</p>
           ${p.sold
             ? '<span class="order sold">Sold out</span>'
-            : `<a class="order" href="${waLink(p)}" target="_blank" rel="noopener">Order</a>`}
+            : `<a class="order" href="${waLink(p)}" target="_blank" rel="noopener"
+                  data-track="order/${p.id}" data-track-title="Order #${p.num} ${p.name}">Order</a>`}
         </div>
       </div>
     </article>`).join('');
@@ -155,6 +156,8 @@ function openProduct(p) {
     mOrder.textContent = 'Order via WhatsApp';
     mOrder.classList.remove('sold');
     mOrder.href = waLink(p);
+    mOrder.dataset.track = `order/${p.id}`;
+    mOrder.dataset.trackTitle = `Order #${p.num} ${p.name}`;
   }
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
