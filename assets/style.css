@@ -242,6 +242,13 @@ img { max-width: 100%; display: block; }
 .about h2 { font-size: clamp(30px, 4.5vw, 44px); font-weight: 500; margin: 0 0 20px; color: var(--gold); }
 .about p { max-width: 720px; margin: 0 auto 16px; font-size: 16.5px; line-height: 1.75; }
 .about strong { color: var(--turquoise); font-weight: 500; }
+.about-pull {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(19px, 2.6vw, 24px); font-style: italic;
+  color: var(--gold); line-height: 1.55;
+  max-width: 640px; margin: 28px auto 0 !important;
+  padding-top: 24px; border-top: 1px solid rgba(217, 148, 20, .35);
+}
 
 /* footer */
 .site-footer { text-align: center; padding: clamp(46px, 7vw, 80px) 20px 34px; }
