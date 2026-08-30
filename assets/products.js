@@ -157,7 +157,8 @@ const PRODUCTS = [
   "name": "Baroque Teardrop Charmers",
   "price": 15,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 5
  },
  {
   "num": "019",
