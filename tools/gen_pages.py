@@ -72,6 +72,8 @@ TEMPLATE = """<!DOCTYPE html>
 <footer class="site-footer">
   <p class="fine">© Jewel Ghar Amsterdam · <a href="{ig}" target="_blank" rel="noopener">Instagram</a> · <a href="mailto:jewelghar27@gmail.com">jewelghar27@gmail.com</a></p>
 </footer>
+<script data-goatcounter="https://jewelghar.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
