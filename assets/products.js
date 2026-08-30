@@ -9,6 +9,7 @@ const PRODUCTS = [
  },
  {
   "id": "golden-luna-earrings",
+  "photos": 4,
   "name": "Golden Luna Earrings",
   "price": 18,
   "unit": null,
