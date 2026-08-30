@@ -55,6 +55,7 @@ const PRODUCTS = [
  {
   "num": "007",
   "id": "sunburst-cameo-drop-earrings",
+  "photos": 4,
   "name": "Sunburst Cameo Drop Earrings",
   "price": 15,
   "unit": null,
