@@ -82,6 +82,10 @@ grid.addEventListener('click', e => {
   if (!imgWrap) return;
   const p = PRODUCTS.find(x => x.id === imgWrap.dataset.id);
   if (!p) return;
+  openProduct(p);
+});
+
+function openProduct(p) {
   mImg.src = `images/${p.id}.webp`;
   mImg.alt = p.name;
   const thumbs = document.getElementById('modal-thumbs');
@@ -114,6 +118,11 @@ grid.addEventListener('click', e => {
   }
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('ed-cta').addEventListener('click', () => {
+  const p = PRODUCTS.find(x => x.id === 'emerald-comet-earrings');
+  if (p) openProduct(p);
 });
 modal.addEventListener('click', e => {
   if (e.target.hasAttribute('data-close')) {

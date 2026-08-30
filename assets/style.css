@@ -176,6 +176,33 @@ img { max-width: 100%; display: block; }
 }
 .empty { text-align: center; color: var(--muted); padding: 60px 0; font-size: 16px; }
 
+/* editorial banner */
+.editorial {
+  background:
+    radial-gradient(700px 420px at 22% 40%, rgba(217, 148, 20, .10), transparent 70%),
+    var(--teal-mid);
+  color: #ece5d6;
+  padding: clamp(40px, 6vw, 70px) clamp(16px, 4vw, 48px);
+}
+.ed-inner {
+  max-width: 1020px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(28px, 6vw, 90px); flex-wrap: wrap-reverse;
+}
+.ed-text { max-width: 430px; }
+.ed-text h2 {
+  font-size: clamp(30px, 4.6vw, 46px); font-weight: 500;
+  line-height: 1.15; margin: 0 0 14px; color: #fff;
+}
+.ed-sub { font-size: 16px; line-height: 1.7; color: #cfdad6; margin: 0; }
+.ed-text .btn-gold { border: none; cursor: pointer; font-family: inherit; margin-top: 24px; }
+.ed-img img {
+  width: clamp(240px, 30vw, 360px); height: auto; display: block;
+  border-radius: 18px;
+  border: 1px solid rgba(217, 148, 20, .45);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+}
+
 /* how ordering works */
 .how {
   background: var(--teal); color: #d9e4e2;

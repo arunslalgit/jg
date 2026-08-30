@@ -783,6 +783,7 @@ const PRODUCTS = [
  },
  {
   "id": "emerald-comet-earrings",
+  "photos": 3,
   "name": "Emerald Comet Earrings",
   "price": 12,
   "unit": null,
