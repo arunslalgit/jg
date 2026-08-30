@@ -148,7 +148,8 @@ const PRODUCTS = [
   "name": "Blue Comet Crescent",
   "price": 18,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 4
  },
  {
   "num": "018",
