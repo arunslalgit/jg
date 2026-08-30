@@ -93,7 +93,8 @@ const PRODUCTS = [
   "name": "Sun Dial Swingers",
   "price": 14,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 4
  },
  {
   "num": "012",
