@@ -50,7 +50,8 @@ const PRODUCTS = [
   "name": "Regal Terra Dangle Earrings",
   "price": 18,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "sold": true
  },
  {
   "num": "007",
@@ -573,7 +574,8 @@ const PRODUCTS = [
   "name": "Frosted Jharokha Drops",
   "price": 15,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "sold": true
  },
  {
   "num": "070",
