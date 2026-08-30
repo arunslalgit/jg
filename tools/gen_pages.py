@@ -63,7 +63,7 @@ TEMPLATE = """<!DOCTYPE html>
   <p class="modal-num">#{num} · {cat}</p>
   <h1>{name}</h1>
   <p class="price">{price_html}</p>
-  <p class="ship-note">Fast shipping · Free shipping on orders over €50</p>
+  <p class="ship-note">Fast shipping · €4.95 (NL) · Free on orders over €50</p>
   {cta}
   <br><a class="back" href="/#p={id}">Browse the full collection</a>
 </main>
@@ -99,6 +99,11 @@ for p in prods:
             "priceCurrency": "EUR",
             "price": str(p['price']),
             "availability": "https://schema.org/" + ("OutOfStock" if p.get('sold') else "InStock"),
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {"@type": "MonetaryAmount", "value": "4.95", "currency": "EUR"},
+                "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "NL"},
+            },
         },
     }, ensure_ascii=False, indent=1)
     page = TEMPLATE.format(
