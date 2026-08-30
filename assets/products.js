@@ -130,7 +130,8 @@ const PRODUCTS = [
   "name": "Twin Moon Medallions",
   "price": 18,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 5
  },
  {
   "num": "016",
