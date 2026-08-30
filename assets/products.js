@@ -75,7 +75,8 @@ const PRODUCTS = [
   "name": "Capri Circle Charms",
   "price": 18,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 4
  },
  {
   "num": "010",
