@@ -102,7 +102,8 @@ const PRODUCTS = [
   "name": "Gypsy Teardrop Swirls",
   "price": 15,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 5
  },
  {
   "num": "013",
