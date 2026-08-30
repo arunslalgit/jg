@@ -139,7 +139,8 @@ const PRODUCTS = [
   "name": "Orchard Garland Drops",
   "price": 15,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 6
  },
  {
   "num": "017",
