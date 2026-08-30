@@ -1,6 +1,7 @@
 const PRODUCTS = [
  {
   "id": "mayura-kundan-earrings",
+  "photos": 3,
   "name": "Mayura Kundan Earrings",
   "price": 18,
   "unit": null,
