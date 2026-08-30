@@ -9,6 +9,8 @@ const countEl = document.getElementById('count');
 const emptyEl = document.getElementById('empty');
 
 let activeCat = 'All';
+const PAGE = 24;
+let limit = PAGE;
 
 function waLink(name) {
   return `https://wa.me/${WA}?text=${encodeURIComponent('Hi Jewelghar, I want to order ' + name)}`;
@@ -30,7 +32,8 @@ function render() {
   else if (sort === 'price-desc') items = [...items].sort((a, b) => b.price - a.price);
   else if (sort === 'name') items = [...items].sort((a, b) => a.name.localeCompare(b.name));
 
-  grid.innerHTML = items.map(p => `
+  const shown = items.slice(0, limit);
+  grid.innerHTML = shown.map(p => `
     <article class="card${p.sold ? ' is-sold' : ''}">
       <div class="card-img" data-id="${p.id}">
         <img src="images/${p.id}.webp" alt="${p.name}" loading="lazy">
@@ -51,6 +54,13 @@ function render() {
 
   countEl.textContent = `${items.length} piece${items.length === 1 ? '' : 's'}`;
   emptyEl.hidden = items.length > 0;
+  const moreBtn = document.getElementById('show-more');
+  if (items.length > shown.length) {
+    moreBtn.hidden = false;
+    moreBtn.textContent = `Show all ${items.length} pieces`;
+  } else {
+    moreBtn.hidden = true;
+  }
 }
 
 function renderChips() {
@@ -64,10 +74,29 @@ chipsEl.addEventListener('click', e => {
   const b = e.target.closest('.chip');
   if (!b) return;
   activeCat = b.dataset.cat;
+  limit = PAGE;
   renderChips();
   render();
 });
-searchEl.addEventListener('input', render);
+searchEl.addEventListener('input', () => { limit = PAGE; render(); });
+document.getElementById('show-more').addEventListener('click', () => {
+  limit = Infinity;
+  render();
+});
+
+/* mobile menu */
+const navToggle = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+navToggle.addEventListener('click', () => {
+  mobileMenu.hidden = !mobileMenu.hidden;
+  navToggle.setAttribute('aria-expanded', String(!mobileMenu.hidden));
+});
+mobileMenu.addEventListener('click', e => {
+  if (e.target.closest('a')) {
+    mobileMenu.hidden = true;
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+});
 sortEl.addEventListener('change', render);
 
 /* modal */
