@@ -67,7 +67,8 @@ const PRODUCTS = [
   "name": "Baroque Berry Blossoms",
   "price": 12,
   "unit": null,
-  "cat": "Earrings"
+  "cat": "Earrings",
+  "photos": 5
  },
  {
   "num": "009",
