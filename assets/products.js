@@ -69,7 +69,8 @@ const PRODUCTS = [
   "price": 12,
   "unit": null,
   "cat": "Earrings",
-  "photos": 5
+  "photos": 5,
+  "sold": true
  },
  {
   "num": "009",
