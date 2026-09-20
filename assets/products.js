@@ -176,7 +176,8 @@ const PRODUCTS = [
   "name": "Aegean Obsidian Seal Bracelet",
   "price": 16,
   "unit": null,
-  "cat": "Bangles & Bracelets"
+  "cat": "Bangles & Bracelets",
+  "photos": 2
  },
  {
   "num": "021",
