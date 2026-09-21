@@ -1,7 +1,7 @@
 # Jewel Ghar Amsterdam — website
 
 Static website for [jewelghar.com](https://www.jewelghar.com/): a handcrafted
-Indian jewelry catalog with WhatsApp ordering. Built as a plain static site
+Indian jewellery catalog with WhatsApp ordering. Built as a plain static site
 (no build step) so it can be hosted on GitHub Pages.
 
 ## Structure
