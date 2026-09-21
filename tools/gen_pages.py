@@ -82,7 +82,9 @@ TEMPLATE = """<!DOCTYPE html>
 urls = [SITE + '/']
 for p in prods:
     price_txt = f"€{p['price']}" + (f" {p['unit']}" if p.get('unit') else '')
-    desc = f"{p['name']} — handcrafted {p['cat'].lower().rstrip('s')} from Jewel Ghar Amsterdam, {price_txt}. Order via WhatsApp."
+    cat_sing = p['cat'].lower()
+    cat_sing = cat_sing[:-3] + 'y' if cat_sing.endswith('ies') else cat_sing.rstrip('s')
+    desc = f"{p['name']} — handcrafted {cat_sing} from Jewel Ghar Amsterdam, {price_txt}. Order via WhatsApp."
     url = f"{SITE}/p/{p['id']}.html"
     img = f"{SITE}/images/{p['id']}.webp"
     msg = urllib.parse.quote(f"Hi Jewelghar, I want to order #{p['num']} {p['name']} ({price_txt})")

@@ -29,7 +29,7 @@ To use the custom domain: add `jewelghar.com` in the same Pages settings screen
 Edit `assets/products.js` — each entry is `{num, id, name, price, unit, cat}`
 plus optional `photos` (gallery count; files `images/<id>-2.webp`…) and
 `sold: true`. The photo lives at `images/<id>.webp`. Categories: Earrings,
-Necklaces & Sets, Bangles & Bracelets, Anklets, Rings, Head Jewelry.
+Necklaces & Sets, Bangles & Bracelets, Anklets, Rings, Hair Accessories.
 
 `num` is the permanent catalog number (goes into WhatsApp order messages,
 e.g. "#076 Handcuff Bracelet (€15)"). Never renumber existing pieces — give

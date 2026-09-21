@@ -649,7 +649,7 @@ const PRODUCTS = [
   "name": "Hira Phool Headband",
   "price": 15,
   "unit": null,
-  "cat": "Head Jewelry"
+  "cat": "Hair Accessories"
  },
  {
   "num": "079",
@@ -777,7 +777,7 @@ const PRODUCTS = [
   "name": "AD Stone Maang Tikka",
   "price": 12,
   "unit": null,
-  "cat": "Head Jewelry"
+  "cat": "Hair Accessories"
  },
  {
   "num": "095",

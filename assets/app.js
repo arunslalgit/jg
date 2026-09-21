@@ -1,5 +1,5 @@
 const WA = '31616311063';
-const CATS = ['All', 'Earrings', 'Necklaces & Sets', 'Bangles & Bracelets', 'Anklets', 'Rings', 'Head Jewelry'];
+const CATS = ['All', 'Earrings', 'Necklaces & Sets', 'Bangles & Bracelets', 'Anklets', 'Rings', 'Hair Accessories'];
 
 const grid = document.getElementById('grid');
 const chipsEl = document.getElementById('chips');
